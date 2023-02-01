@@ -23,7 +23,11 @@ body {
   margin: 0 auto;
   background-color: #8ecae6;
   border-radius: 10px;
+  font-size: 28px;
+  text-align: right;
 }
+
+
 
 #calculator-btns {
   width: 490px;
