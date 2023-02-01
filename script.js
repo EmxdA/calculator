@@ -29,5 +29,3 @@ let operate = () => {
         console.log(division(num1,num2));
     }
 }
-
-operate();

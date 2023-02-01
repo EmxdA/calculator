@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Calculator</title>
-</head>
-<body>
-    
-</body>
-<script src="script.js"></script>
+  </head>
+  <body>
+    <div id="calculator-container">
+      <div id="calculator-screen"></div>
+      <div id="calculator-btns">
+        <div id="rows">
+          <div id="row-one">
+            <button id="mc">MC</button>
+            <button id="m-plus">M+</button>
+            <button id="divide-btn">/</button>
+          </div>
+          <div id="row-two">
+            <button id="seven-btn">7</button>
+            <button id="eight-btn">8</button>
+            <button id="nine-btn">9</button>
+          </div>
+          <div id="row-three">
+            <button id="four-btn">4</button>
+            <button id="five-btn">5</button>
+            <button id="six-btn">6</button>
+          </div>
+          <div id="row-four">
+            <button id="one-btn">1</button>
+            <button id="two-btn">2</button>
+            <button id="three-btn">3</button>
+          </div>
+          <div id="row-five">
+            <button id="zero-btn">0</button>
+            <button id="dot-btn">.</button>
+          </div>
+        </div>
+        <div id="column-one">
+          <button id="multiply-btn">X</button>
+          <button id="minus-btn">-</button>
+          <button id="addition-btn">+</button>
+          <button id="equal-btn">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>

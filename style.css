@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #219ebc;
+  font-family: "Oswald", sans-serif;
+}
+
+#calculator-container {
+  margin: 100px auto;
+  width: 500px;
+  height: 580px;
+  padding: 30px;
+  background-color: #023047;
+  border-radius: 15px;
+}
+
+#calculator-screen {
+  width: 490px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #8ecae6;
+  border-radius: 10px;
+}
+
+#calculator-btns {
+  width: 490px;
+  margin: 20px auto;
+  display: flex;
+}
+
+#rows {
+  display: inline-block;
+}
+
+#row-one,
+#row-two,
+#row-three,
+#row-four,
+#row-five {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  width: auto;
+}
+
+#row-one button,
+#multiply-btn {
+  background-color: #219ebc;
+}
+
+#row-one button:hover,
+#multiply-btn:hover {
+  background-color: #219dbce3;
+}
+
+#column-one {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-top: 20px;
+  gap: 20px;
+  align-content: space-between;
+}
+
+button {
+  font-size: 18px;
+  font-weight: bold;
+  width: 110px;
+  height: 70px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffb703;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ffb803e3;
+}
+
+#zero-btn {
+  width: 235px;
+}
+
+#equal-btn {
+  height: 160px;
+  background-color: #fb8500;
+}
+
+#equal-btn:hover {
+  background-color: #fb8600ea;
+}
