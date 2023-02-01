@@ -11,7 +11,7 @@ body {
 #calculator-container {
   margin: 100px auto;
   width: 500px;
-  height: 580px;
+  min-height: 580px;
   padding: 30px;
   background-color: #023047;
   border-radius: 15px;
@@ -19,15 +19,14 @@ body {
 
 #calculator-screen {
   width: 490px;
-  height: 100px;
+  min-height: 100px;
   margin: 0 auto;
   background-color: #8ecae6;
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 38px;
   text-align: right;
+  overflow-wrap: break-word;
 }
-
-
 
 #calculator-btns {
   width: 490px;
