@@ -149,7 +149,9 @@ let equalMethod = () => {
 
   showOutput = true;
   display(false, final);
-};document.onkeydown = (e) => {
+};
+
+document.onkeydown = (e) => {
     switch (e.key) {
       case "1":
         display(false, "1");
@@ -248,63 +250,4 @@ let display = (operator, nextInput) => {
     operateVal = [];
   }
   calculatorScreen.textContent = displayVal;
-};
-
-document.onkeydown = (e) => {
-  switch (e.key) {
-    case "1":
-      display(false, "1");
-      break;
-    case "2":
-      display(false, "2");
-      break;
-    case "3":
-      display(false, "3");
-      break;
-    case "4":
-      display(false, "4");
-      break;
-    case "5":
-      display(false, "5");
-      break;
-    case "6":
-      display(false, "6");
-      break;
-    case "7":
-      display(false, "7");
-      break;
-    case "8":
-      display(false, "8");
-      break;
-    case "9":
-      display(false, "1");
-      break;
-    case "0":
-      display(false, "1");
-      break;
-    case "+":
-        addition();
-      break;
-    case "-":
-        subtraction();
-      break;
-    case "*":
-        multiplication();
-      break;
-    case "/":
-        division();
-      break;
-    case "Backspace":
-        clearEntry();
-      break;
-    case "Delete":
-        clearAll();
-        break;
-    case "=":
-    case "Enter":
-        equalMethod();
-      break;
-    default:
-      return;
-  }
 };
