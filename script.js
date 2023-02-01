@@ -38,58 +38,68 @@ nineBtn.addEventListener("click", () => display(false, "9"));
 zeroBtn.addEventListener("click", () => display(false, "0"));
 decimalBtn.addEventListener("click", () => display(false, "."));
 
-clearAllBtn.addEventListener("click", () => {
-    showOutput = false;
-    displayVal = null;
-    value = null;
-    storedVal = [];
-    operateVal = [];
-    calculatorScreen.textContent = "";
-});
+let clearAll = () => {
+  showOutput = false;
+  displayVal = null;
+  value = null;
+  storedVal = [];
+  operateVal = [];
+  calculatorScreen.textContent = "";
+};
 
-clearEntryBtn.addEventListener("click", () =>
-{
+let clearEntry = () => {
+  if (
+    numbers.includes(
+      calculatorScreen.textContent.charAt(
+        calculatorScreen.textContent.length - 1
+      )
+    )
+  ) {
+    value = value.slice(0, -1);
+  } else if (
+    operators.includes(
+      calculatorScreen.textContent.charAt(
+        calculatorScreen.textContent.length - 1
+      )
+    )
+  ) {
+    value = storedVal[storedVal.length - 1];
+    operateVal.pop();
+    storedVal.pop();
+  } else {
+    return 0;
+  }
 
-    if (numbers.includes(calculatorScreen.textContent.charAt(calculatorScreen.textContent.length - 1))){
-        value = value.slice(0,-1);
-    } else if (operators.includes(calculatorScreen.textContent.charAt(calculatorScreen.textContent.length - 1))) {
-        value = storedVal[storedVal.length - 1];
-        operateVal.pop();
-        storedVal.pop();
-    } else {
-        return 0;
-    }
+  displayVal = displayVal.slice(0, -1);
+  calculatorScreen.textContent = displayVal;
+};
 
-    displayVal = displayVal.slice(0, -1);
-    calculatorScreen.textContent = displayVal;
-});
-
-addBtn.addEventListener("click", () => {
+let addition = () => {
   storedVal.push(value);
   console.log(value);
   operateVal.push("+");
   display(true, "+");
-});
+};
 
-subtractBtn.addEventListener("click", () => {
+let subtraction = () => {
   storedVal.push(value);
   operateVal.push("-");
   display(true, "-");
-});
+};
 
-divideBtn.addEventListener("click", () => {
+let division = () => {
   storedVal.push(value);
   operateVal.push("/");
   display(true, "÷");
-});
+};
 
-multiplyBtn.addEventListener("click", () => {
+let multiplication = () => {
   storedVal.push(value);
   operateVal.push("x");
   display(true, "x");
-});
+};
 
-equalBtn.addEventListener("click", () => {
+let equalMethod = () => {
   storedVal.push(value);
   let final = 0;
 
@@ -114,6 +124,8 @@ equalBtn.addEventListener("click", () => {
         case "x":
           final = intArr[i] * intArr[i + 1];
           break;
+        default:
+          return;
       }
     } else {
       switch (operateVal[i]) {
@@ -129,13 +141,29 @@ equalBtn.addEventListener("click", () => {
         case "x":
           final *= intArr[i + 1];
           break;
+        default:
+          return;
       }
     }
   }
 
   showOutput = true;
   display(false, "= " + final);
-});
+};
+
+clearAllBtn.addEventListener("click", clearAll);
+
+clearEntryBtn.addEventListener("click", clearEntry);
+
+addBtn.addEventListener("click", addition);
+
+subtractBtn.addEventListener("click", subtraction);
+
+divideBtn.addEventListener("click", division);
+
+multiplyBtn.addEventListener("click", multiplication);
+
+equalBtn.addEventListener("click", equalMethod);
 
 let display = (operator, nextInput) => {
   if (displayVal === null) {
@@ -161,4 +189,63 @@ let display = (operator, nextInput) => {
     operateVal = [];
   }
   calculatorScreen.textContent = displayVal;
+};
+
+document.onkeydown = (e) => {
+  switch (e.key) {
+    case "1":
+      display(false, "1");
+      break;
+    case "2":
+      display(false, "2");
+      break;
+    case "3":
+      display(false, "3");
+      break;
+    case "4":
+      display(false, "4");
+      break;
+    case "5":
+      display(false, "5");
+      break;
+    case "6":
+      display(false, "6");
+      break;
+    case "7":
+      display(false, "7");
+      break;
+    case "8":
+      display(false, "8");
+      break;
+    case "9":
+      display(false, "1");
+      break;
+    case "0":
+      display(false, "1");
+      break;
+    case "+":
+        addition();
+      break;
+    case "-":
+        subtraction();
+      break;
+    case "*":
+        multiplication();
+      break;
+    case "/":
+        division();
+      break;
+    case "Backspace":
+        clearEntry();
+      break;
+    case "Delete":
+        clearAll();
+        break;
+    case "=":
+    case "Enter":
+        equalMethod();
+      break;
+    default:
+      return;
+  }
 };
